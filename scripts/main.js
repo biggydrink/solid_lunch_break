@@ -11,4 +11,25 @@ solid.auth.trackSession(session => {
     $('#user').text(session && session.webId);
     $('#issuer').text(session && session.issuer);
     console.log(session);
+
+    if (session) {
+        $('#user').text(session.webId);
+        if (!$('#profile').val())  // this if doesn't have {} ?
+            $('#profile').val(session.webId);
+    }
 });
+
+/*
+
+Reminder of arrow notation: 
+
+
+let/const myFuncArrowFuncSyntax = (param1, param2return) => {
+	return param2return;
+};
+
+// only works if function body is 1 line (?)
+let/const myFuncConciseBody = (param1, param2return) => param2return;
+
+let/const myFuncConciseBody = param2return => param2return + 1;
+*/
