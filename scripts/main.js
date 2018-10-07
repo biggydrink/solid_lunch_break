@@ -14,6 +14,7 @@ solid.auth.trackSession(session => {
 
     if (session) {
         $('#user').text(session.webId);
+        // Use the user's WebID as default profile
         if (!$('#profile').val())  // this if doesn't have {} ?
             $('#profile').val(session.webId);
     }
